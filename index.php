@@ -24,7 +24,7 @@ function generatePassword($length){
     //ciclo finchè la password non è giusta
     else{
         while(strlen($password) < $length){
-            $number = randomNumber(0, strlen($baseString) - 1); //genero indice casuale tra 0 e lunghezza baseString
+            $index = randomNumber(0, strlen($baseString) - 1); //genero indice casuale tra 0 e lunghezza baseString
             $char = $baseString[$index]; //recupero carattere nell indice da quella stringa
             $password.=$char; //concateno la password
 
@@ -51,11 +51,11 @@ if(isset($_GET['length'])){
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <?php if(isset($response)) {?>
+                <?php if(isset($response)) { ?>
                     <div class="alert alert-info">
                         <?php echo $response; ?>
                     </div>
-                <?php} ?>
+                <?php } ?>
                 <form action="index.php" method="GET">
                     <div class="row">
                         <div class="col-12 col-md-6">
